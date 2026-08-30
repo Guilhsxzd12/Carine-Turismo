@@ -1,0 +1,1 @@
+const {json,isAuthed,supabase}=require('./_utils');module.exports=async(req,res)=>{if(!isAuthed(req))return json(res,401,{error:'Não autorizado'});try{const rows=await supabase('catalogo?select=*&order=ordem.asc,created_at.asc');json(res,200,rows||[]);}catch(e){json(res,500,{error:e.message})}};

@@ -1,0 +1,9 @@
+const crypto = require('crypto');
+
+function json(res,status,data,extra={}){res.statusCode=status;res.setHeader('Content-Type','application/json; charset=utf-8');Object.entries(extra).forEach(([k,v])=>res.setHeader(k,v));res.end(JSON.stringify(data));}
+function cookie(req,name){const raw=req.headers.cookie||'';const m=raw.match(new RegExp('(?:^|; )'+name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'=([^;]*)'));return m?decodeURIComponent(m[1]):null;}
+function sign(value){const secret=process.env.ADMIN_SESSION_SECRET||process.env.SUPABASE_SERVICE_ROLE_KEY||''; if(!secret) throw new Error('Defina ADMIN_SESSION_SECRET ou SUPABASE_SERVICE_ROLE_KEY');return crypto.createHmac('sha256',secret).update(value).digest('hex');}
+function makeSession(user){const exp=Date.now()+1000*60*60*12;const payload=Buffer.from(JSON.stringify({user,exp})).toString('base64url');return payload+'.'+sign(payload);}
+function isAuthed(req){const token=cookie(req,'carine_admin');if(!token)return false;const [payload,sig]=token.split('.');if(!payload||!sig||!crypto.timingSafeEqual(Buffer.from(sig),Buffer.from(sign(payload))))return false;try{const data=JSON.parse(Buffer.from(payload,'base64url').toString());return data.exp>Date.now()&&data.user===(process.env.CARINE_ADMIN_USER||process.env.ADMIN_USER||'carine');}catch{return false}}
+async function supabase(path,options={}){const base=process.env.SUPABASE_URL, key=process.env.SUPABASE_SERVICE_ROLE_KEY;if(!base||!key)throw new Error('Supabase não configurado');const headers={apikey:key,Authorization:`Bearer ${key}`,'Content-Type':'application/json',...(options.headers||{})};const r=await fetch(`${base}/rest/v1/${path}`,{...options,headers});const text=await r.text();if(!r.ok)throw new Error(text||`Supabase ${r.status}`);return text?JSON.parse(text):null;}
+module.exports={json,makeSession,isAuthed,supabase};
