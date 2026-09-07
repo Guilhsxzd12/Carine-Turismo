@@ -95,11 +95,13 @@
 .site-header .nav-links>a:hover,
 .site-header .nav-links>a.active,
 .site-header .ct-nav-dropdown>summary:hover,
+.site-header .ct-nav-dropdown>summary.active,
 .site-header .ct-nav-dropdown[open]>summary{
   background:rgba(255,255,255,.09)!important;
   color:#fff!important;
 }
-.site-header .nav-links>a.active{
+.site-header .nav-links>a.active,
+.site-header .ct-nav-dropdown>summary.active{
   box-shadow:inset 0 0 0 1px rgba(255,189,19,.22);
 }
 .site-header .ct-nav-dropdown{position:relative}
@@ -259,6 +261,7 @@
   .site-header .nav-links>a:hover,
   .site-header .nav-links>a.active,
   .site-header .ct-nav-dropdown>summary:hover,
+  .site-header .ct-nav-dropdown>summary.active,
   .site-header .ct-nav-dropdown[open]>summary{
     background:#fff5de!important;
     color:#7b330f!important;
