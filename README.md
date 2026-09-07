@@ -20,6 +20,7 @@ Site catálogo responsivo para Vercel, com painel administrativo protegido em `/
 - Se o Supabase ainda não estiver configurado ou estiver vazio, o site usa `data/catalogo.js` como fallback, então o site não quebra.
 - O painel permite criar, editar e excluir Passeios, Ingressos, Hotéis e Eventos.
 - O login é validado no servidor e cria cookie HttpOnly por 12 horas; a senha não fica exposta no código do navegador.
+- O cabeçalho público usa navegação em cápsula flutuante, responsiva, com acesso direto a passeios, ingressos, destinos internacionais e Instagram.
 
 ## Primeiro uso
 
