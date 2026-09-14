@@ -1,0 +1,51 @@
+/* Home limpa: menos ícones, mais respiro e uma seção editorial em destaque */
+.home-page .benefits{display:none}
+.home-page .destination-flag{display:none!important}
+.home-page .destination-head>div{display:block}
+.home-page .destination-head{margin-bottom:14px}
+.home-page .destination-head h2{font-size:clamp(1.45rem,2.2vw,2rem)}
+.home-page .destination-head p{font-size:.9rem;max-width:620px}
+.home-page .destination-section{padding:28px 0 4px}
+.home-page .destination-section .container{padding:22px 22px 20px;border:1px solid #eee4d8;border-radius:26px;background:#fffdf9;box-shadow:0 10px 26px rgba(34,28,20,.035)}
+.home-page .destination-carousel{gap:14px}
+.home-page .destination-card{flex-basis:250px;height:205px;border-radius:18px;box-shadow:none;border:1px solid rgba(17,29,34,.05)}
+.home-page .destination-card-go{display:none!important}
+.home-page .destination-card-copy{right:13px;bottom:13px}
+.home-page .destination-card-copy b{font-size:.96rem}
+.home-page .destination-card-copy small{margin-top:5px;font-size:.7rem}
+.home-page .carousel-arrow{width:36px;height:36px;font-size:1.45rem;box-shadow:0 6px 18px rgba(0,0,0,.07)}
+.home-page .see-all{padding:9px 15px}
+
+.popular-destination{padding:34px 0 10px}
+.popular-card{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);min-height:430px;border:1px solid #eee2d4;border-radius:30px;background:#fff7e8;overflow:hidden;box-shadow:0 16px 40px rgba(32,26,18,.055)}
+.popular-media{min-height:430px;overflow:hidden}
+.popular-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.popular-card:hover .popular-media img{transform:scale(1.025)}
+.popular-copy{padding:56px 54px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.popular-copy .eyebrow{margin-bottom:12px}
+.popular-copy h2{font-size:clamp(2rem,3.6vw,3.4rem);max-width:520px}
+.popular-copy p{margin:18px 0 26px;max-width:520px;color:#616b6f;font-size:1rem;line-height:1.7}
+.popular-copy .btn{padding-inline:22px}
+
+.home-page .story-card blockquote{display:none}
+.home-page .story-copy{max-width:620px}
+
+@media(max-width:900px){
+  .popular-card{grid-template-columns:1fr;min-height:0}
+  .popular-media{min-height:330px}
+  .popular-copy{padding:36px 28px}
+  .home-page .destination-section .container{padding:18px}
+}
+@media(max-width:680px){
+  .popular-destination{padding-top:26px}
+  .popular-card{border-radius:24px}
+  .popular-media{min-height:270px}
+  .popular-copy{padding:28px 22px 30px}
+  .popular-copy h2{font-size:2rem}
+  .popular-copy p{font-size:.94rem}
+  .home-page .destination-head{align-items:flex-end}
+  .home-page .destination-head h2{font-size:1.35rem}
+  .home-page .destination-head p{font-size:.82rem}
+  .home-page .destination-card{flex-basis:78vw;max-width:300px;height:220px}
+  .home-page .carousel-arrow{display:none}
+}
