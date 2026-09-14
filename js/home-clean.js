@@ -1,0 +1,2 @@
+function cleanHomeCards(){document.querySelectorAll('.destination-card-go').forEach(el=>el.remove());document.querySelectorAll('.destination-card-copy small').forEach(el=>{el.textContent=el.textContent.replace(/^●\s*/, '')})}
+document.addEventListener('carine:data-ready',cleanHomeCards);if(document.readyState!=='loading')setTimeout(cleanHomeCards,0);
