@@ -1,7 +1,8 @@
 /* Home minimalista Carine Turismo */
 .home-page{background:#fffdf9}
-.home-page .site-header{background:transparent;backdrop-filter:none}
-.home-page .nav{background:#fff7e8;border-color:#f0e1ca;box-shadow:0 8px 28px rgba(38,30,20,.07)}
+.home-page .site-header{background:transparent!important;backdrop-filter:none!important}
+.home-page .site-header .nav,.home-page .nav{background:#fff7e8!important;background-image:none!important;border-color:#f0e1ca!important;color:#111d22!important;box-shadow:0 8px 28px rgba(38,30,20,.07)!important}
+.home-page .brand span{color:#111d22!important}.home-page .nav-links a{color:#111d22!important}.home-page .nav-links a:hover,.home-page .nav-links a.active{background:#ffeecf!important;color:#111d22!important}.home-page .social-btn{background:#fff!important;color:#111d22!important;border-color:#e6d8c2!important}.home-page .mobile-toggle{background:#fff!important;border-color:#e6d8c2!important}.home-page .mobile-toggle span{background:#111d22!important}
 .home-page .benefits,.home-page .destination-flag,.home-page .destination-card-go,.home-page .carousel-arrow{display:none!important}
 .home-page .home-hero{margin-top:12px}
 .home-page .hero-modern{height:520px;border-radius:28px}
